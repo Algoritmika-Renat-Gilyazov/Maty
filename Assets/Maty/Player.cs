@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Maty
 {
@@ -22,6 +23,10 @@ namespace Maty
         [Tooltip("How large the player mouse sensitivity")]
         [SerializeField]
         float mouseSensitivity;
+
+        public Game game;
+        [NonSerialized]
+        public byte currentNotebooks;
         
         private float targetYaw;
         private float currentYaw;
@@ -42,8 +47,7 @@ namespace Maty
     
             Vector3 direction = new(moveX, 0, moveY);
             direction.Normalize();
-
-            // Поворачиваем направление движения в соответствии с текущим поворотом игрока
+            
             direction = transform.rotation * direction;
 
             rb.MovePosition(rb.position + direction * (movementSpeed * Time.fixedDeltaTime));
