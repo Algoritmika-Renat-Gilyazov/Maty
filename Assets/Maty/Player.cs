@@ -25,7 +25,6 @@ namespace Maty
         float mouseSensitivity;
 
         public Game game;
-        [NonSerialized]
         public byte currentNotebooks;
         
         private float targetYaw;

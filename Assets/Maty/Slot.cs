@@ -1,7 +1,11 @@
-﻿namespace Maty
+﻿#nullable enable
+
+using UnityEngine;
+
+namespace Maty
 {
-    public class Slot
+    public sealed class Slot : MonoBehaviour
     {
-        
+        public Item? item;
     }
 }
